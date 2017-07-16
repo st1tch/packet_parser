@@ -1,18 +1,39 @@
-#include <pcap.h>
 #include <stdio.h>
-#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <pcap/pcap.h>
+#include <errno.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <net/ethernet.h>
+#include <netinet/ip.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <unistd.h>
+#include <sys/time.h>
 
-typedef struct {
-  uint16_t src_port;
-  uint16_t dst_port;
-  uint32_t seq;
-  uint32_t ack;
-  uint8_t  data_offset;
-  uint8_t  flags;
-  uint16_t window_size;
-  uint16_t checksum;
-  uint16_t urgent_p;
-} tcp_header_t;
+
+typedef struct mac_address{
+	u_char byte1;
+	u_char byte2;
+	u_char byte3;
+	u_char byte4;
+	u_char byte5;
+	u_char byte6;
+}macaddress;
+
+struct ip *iph; 
+struct tcphdr *tcph;
+
+void callback(u_char *useless, const struct pcap_pkthdr *pkthdr, const u_char *packet) 
+{
+	static int count = 1;
+	struct ether_header *ep;
+	unsigned short ether_type;
+	int chcnt =0;
+	int length=pkthdr->len;
+}
 
 int main(int argc, char *argv[])
 {
@@ -45,11 +66,12 @@ int main(int argc, char *argv[])
 		return(2);
 	}
 
-	while(1){
-		packet = pcap_next(handle, &header);
-		printf("------------------------------------------------\n");
-		printf("------------------------------------------------\n");
+	if (pcap_compile(pcd, &fp, argv[2], 0, netp) ==1){
+		pcap_perror(pcd, "pcap_compile failure");
+		return(2);
 	}
+
+	pcap_loop(pcd, atoi(argv[1]), callback, NULL);
 
 	/* And close the session */
 	pcap_close(handle);
