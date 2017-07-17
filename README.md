@@ -4,6 +4,18 @@
 
 * Requirements
 > pcap.h - sudo apt-get install libpcap-dev</br>
-> libnet.h - sudo apt-get install libnet-cpp-dev libnet1-dev
+> libnet.h - sudo apt-get install libnet-cpp-dev libnet1-dev</br></br>
+
+
+### headers
+- Ethernet header
+![1](https://github.com/st1tch/packet_parser/blob/master/ether_header.png)
+
+- Ip header
+![2](https://github.com/st1tch/packet_parser/blob/master/ip_header.png)
+
+- Tcp header
+![3](https://github.com/st1tch/packet_parser/blob/master/tcp_header.png)
+
 
 </br>
