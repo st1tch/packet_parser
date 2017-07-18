@@ -9,17 +9,6 @@
 
 int count = 0;
 
-void print_ip(int *ip,int len)
-{
-	int i = 0;
-	for(i=0;i<len;i++)
-	{
-		printf("%d",ip[i]);
-		if(!(i==len-1)) printf(".");
-	}
-	printf("\n");
-}
-
 void convert_ip(int conv_ip[], int ip)
 {
 	char tmp_ip[9];
