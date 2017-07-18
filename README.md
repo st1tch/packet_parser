@@ -4,7 +4,7 @@
 
 * Requirements
 > pcap.h - sudo apt-get install libpcap-dev</br>
-> libnet.h - sudo apt-get install libnet-cpp-dev libnet1-dev</br></br>
+> libnet.h - sudo apt-get install libnet-cpp-dev libnet1-dev</br>
 
 
 ## headers
@@ -16,6 +16,8 @@
 
 - Tcp header
 ![3](https://github.com/st1tch/packet_parser/blob/master/tcp_header.png)
-
-
 </br>
+
+## Referencd
+> [https://gitlab.com/gilgil/network/wikis/ethernet-packet-dissection/pcap-programming](https://gitlab.com/gilgil/network/wikis/ethernet-packet-dissection/pcap-programming)</br>
+> [https://wiki.kldp.org/wiki.php/DocbookSgml/Libpcap-KLDP](https://wiki.kldp.org/wiki.php/DocbookSgml/Libpcap-KLDP)</br>
