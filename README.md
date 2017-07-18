@@ -18,6 +18,6 @@
 ![3](https://github.com/st1tch/packet_parser/blob/master/tcp_header.png)
 </br>
 
-## Referencd
+## Reference
 > [https://gitlab.com/gilgil/network/wikis/ethernet-packet-dissection/pcap-programming](https://gitlab.com/gilgil/network/wikis/ethernet-packet-dissection/pcap-programming)</br>
 > [https://wiki.kldp.org/wiki.php/DocbookSgml/Libpcap-KLDP](https://wiki.kldp.org/wiki.php/DocbookSgml/Libpcap-KLDP)</br>
